@@ -37,3 +37,20 @@ gem 'spring',        group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+gem 'wirble', require: false
+
+gem 'devise'
+
+group :development, :test do
+  gem 'rspec-rails', '~> 2.0'
+  gem 'factory_girl_rails'
+  gem 'rb-fsevent' if `uname` =~ /Darwin/
+  gem 'guard-rspec', require: false
+  gem 'terminal-notifier-guard' if `uname` =~ /Darwin/
+end
+
+group :test do
+  gem 'shoulda'
+  gem 'shoulda-matchers'
+end
